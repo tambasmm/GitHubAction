@@ -32,7 +32,10 @@ on:
         type: boolean
 
         default: false
- 
+
+env:
+  MY_VAR: GIT_HUB_ACRION_ENV_VAR
+  MY_GREEEDING: IS_GOOD
 jobs:
 
   Job1:
@@ -68,4 +71,8 @@ jobs:
         if: ${{ !inputs.areYouFeelingGood }}
 
         run: echo "I am not well!"
+        
+      - name: Step5
+        run: echo "${{env.MY_VAR}} ${{env.MY_GREEEDING}}"
+      
  
