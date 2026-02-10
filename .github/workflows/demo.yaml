@@ -12,6 +12,10 @@ on:
   pull_request:
     branches:
       - main
+  issues:
+    types:
+     - closed
+     - opened
  
   # schedule event
   schedule:
