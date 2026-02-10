@@ -48,7 +48,7 @@ jobs:
 
         run: echo "Hello from Greeting!"
 
-        if: ${{env.MY_VAR == 'IS_GOOD'}}
+        if: ${{env.TASK-1155_FailFast == 'IS_GOOD'}}
  
   Job2:
 
