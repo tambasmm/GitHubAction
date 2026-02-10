@@ -13,7 +13,7 @@ jobs:
   runs-on: 'ubantu-latest'
   steps:
     - name: Say Hello
-      run: echo "we are learning GitHub Action"cancel-timeout-minutes: 
+      run: echo "we are learning GitHub Action": 
   Job2:
     runs-on: ubantu-latest
     needs: [Greeting]
