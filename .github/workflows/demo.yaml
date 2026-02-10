@@ -47,6 +47,8 @@ jobs:
       - name: Say hello
 
         run: echo "Hello from Greeting!"
+
+        if: ${{env.MY_VAR == 'IS_GOOD'}}
  
   Job2:
 
