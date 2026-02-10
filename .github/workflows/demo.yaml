@@ -1,0 +1,28 @@
+name: Demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      areYouFeelingGood:
+        description: "Are you feeling good?"
+        type: boolean
+        default: false
+
+jobs:
+  Greeting:
+  runs-on: 'ubantu-latest'
+  steps:
+    - name: Say Hello
+      run: echo "we are learning GitHub Action"cancel-timeout-minutes: 
+  Job2:
+    runs-on: ubantu-latest
+    needs: [Greeting]
+    steps:
+      - name: Step2
+        run: echo "This is step2 with need of Greeting"
+      - name: step3
+        if: ${{ inputs.areYouFeelingGood }}
+        run: echo "I am not Feeling Good"
+      - name: step4
+        if: ${{ !inputs.areYouFeelingGood }}
+        run: echo "I am feeling good"
