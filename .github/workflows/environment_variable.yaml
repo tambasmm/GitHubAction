@@ -7,7 +7,7 @@ on:
         type: choice
         options: [STAGING, PRODUCTION, TEST]
         default: TEST
-      user_name:
+      var_name:
         description: "Who are you?"
         type: string
         required: true
@@ -22,5 +22,5 @@ jobs:
             echo "selected environment: ${{ inputs.target_env }}"
       - name: Display message
         run: |
-          echo "Welcome, ${{ inputs.user_name }}"
-          echo "${{ vars.user_name }} from ${{ inputs.target_env }}"
+          echo "Welcome, ${{ inputs.var_name }}"
+          echo "${{ vars.var_name }} from ${{ inputs.target_env }}"
