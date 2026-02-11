@@ -23,4 +23,4 @@ jobs:
       - name: Display message
         run: |
           echo "Welcome to, ${{ inputs.target_env }}"
-          echo "vars.${{TEST_VAR}} from ${{ inputs.target_env }}"
+          echo "vars.${{var_name}} from ${{ inputs.target_env }}"
