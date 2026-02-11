@@ -1,7 +1,5 @@
-
-
 name: Demo
- 
+
 on:
 # webhook event#
   push:
@@ -16,7 +14,7 @@ on:
     types:
      - closed
      - opened
- 
+
   # schedule event
   schedule:
     - cron: 0 12 * * *
@@ -36,6 +34,7 @@ on:
 env:
   MY_VAR: GIT_HUB_ACRION_ENV_VAR
   MY_GREEEDING: IS_GOOD
+
 jobs:
 
   Job1:
@@ -49,7 +48,7 @@ jobs:
         run: echo "Hello from Greeting!"
 
         if: ${{env.TASK-1155_FailFast == 'IS_GOOD'}}
- 
+
   Job2:
 
     runs-on: ubuntu-latest
@@ -59,22 +58,15 @@ jobs:
     steps:
 
       - name: Step2
-
         run: echo "${{ github.actor }} is learning GitHub Actions."
- 
+
       - name: Step3
-
         if: ${{ inputs.areYouFeelingGood }}
-
         run: echo "Great!"
  
       - name: Step4
-
         if: ${{ !inputs.areYouFeelingGood }}
-
         run: echo "I am not well!"
-        
+
       - name: Step5
         run: echo "${{env.MY_VAR}} ${{env.MY_GREEEDING}}"
-      
- 
