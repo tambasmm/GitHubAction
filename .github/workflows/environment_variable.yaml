@@ -11,7 +11,7 @@ on:
         description: "Enter Secters/Variable"
         type: string
         required: true
-        default: "Guest"
+        default: "TEST_VAR"
 jobs:
   PrintEnvVar:
     runs-on: ubuntu-latest
@@ -22,5 +22,5 @@ jobs:
             echo "selected environment: ${{ inputs.target_env }}"
       - name: Display message
         run: |
-          echo "Welcome, ${{ inputs.var_name }}"
+          echo "Welcome to, ${{ inputs.target_env }}"
           echo "${{ vars.var_name }} from ${{ inputs.target_env }}"
