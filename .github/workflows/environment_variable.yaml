@@ -8,7 +8,7 @@ on:
         options: [STAGING, PRODUCTION, TEST]
         default: TEST
       var_name:
-        description: "Who are you?"
+        description: "Enter Secters/Variable"
         type: string
         required: true
         default: "Guest"
