@@ -3,7 +3,7 @@ name: Demo
 on:
 # webhook event#
   push:
-    branches: 
+    branches:
       - main
       - Task/*
       - feat/*
@@ -12,13 +12,13 @@ on:
       - main
   issues:
     types:
-     - closed
-     - opened
+      - closed
+      - opened
 
   # schedule event
   schedule:
     - cron: 0 12 * * *
-    - cron: 0 9 * * 0  
+    - cron: 0 9 * * 0
   workflow_dispatch:
 
     inputs:
@@ -63,7 +63,7 @@ jobs:
       - name: Step3
         if: ${{ inputs.areYouFeelingGood }}
         run: echo "Great!"
- 
+
       - name: Step4
         if: ${{ !inputs.areYouFeelingGood }}
         run: echo "I am not well!"
