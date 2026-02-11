@@ -21,4 +21,4 @@ jobs:
         run: |
           set -e
           pip install yamllint
-          yamllint -f colored -s
+          yamllint -f colored -s .
