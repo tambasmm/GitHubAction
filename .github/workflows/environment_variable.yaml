@@ -1,4 +1,4 @@
-name: Environment_Variable
+name: Environment Variable
 on:
   workflow_dispatch:
     inputs:
@@ -18,7 +18,8 @@ jobs:
     environment: ${{ inputs.target_env }}
     steps:
       - name: Show seleted environment
-        run: echo "selected environment: ${{ inputs.target_env }}"
+        run: |
+            echo "selected environment: ${{ inputs.target_env }}"
       - name: Display message
         run: |
           echo "Welcome, ${{ input.user_name }}"
