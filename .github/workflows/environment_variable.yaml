@@ -1,0 +1,25 @@
+name: Environment Variable
+on:
+  workflow_dispatch:
+    inputs:
+      target_env:
+        description: "Chose Environment"
+        type: choice
+        options: [STAGING, PRODUCTION, TEST]
+        default: TEST
+      user_name:
+        description: "Who are you?"
+        type: string
+        required: true
+        default: "Guest"
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.target_env }}
+    steps:
+      - name: Show seleted environment
+        run: echo "selected environment: ${{ inputs.target_env }}"
+      - name: Display message
+        run: |
+          echo "Welcome, ${{ input.user_name }}"
+          echo "${{ vars.user_name }} from ${{ inputs.target_env }}"
